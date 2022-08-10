@@ -1,0 +1,54 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const RovidUI());
+}
+
+class RovidUI extends StatelessWidget {
+  const RovidUI({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: DefaultTabController(
+        length: 5,
+        child: Scaffold(
+          appBar: AppBar(
+            bottom: const TabBar(
+              tabs: [
+                Tab(
+                  text: "Navigation",
+                ),
+                Tab(
+                  text: "Face Recognition",
+                ),
+                Tab(
+                  text: "Medical Check-Up",
+                ),
+                Tab(
+                  text: "Patient Lists",
+                ),
+                Tab(
+                  text: "Administration",
+                ),
+              ],
+            ),
+            title: const Text(
+                'MR-IAT || Medical Robot-Controlled Intelligent Assistive Technology'),
+          ),
+          body: const TabBarView(
+            children: [
+              Icon(Icons.directions_car),
+              Icon(Icons.directions_transit),
+              Icon(Icons.directions_bike),
+              Icon(Icons.list),
+              Icon(Icons.account_box)
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
